@@ -1,0 +1,26 @@
+﻿<Window x:Class="ARM_dolg.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ARM_dolg"
+        mc:Ignorable="d"
+        ResizeMode="CanResize"
+        MinHeight="170"
+        MinWidth="340"
+        Title="Авторизация" Height="170" Width="350">
+    <Grid Height="184" VerticalAlignment="Top">
+        <TextBlock Text="Логин:" Margin="10,10,0,87"/>
+        <TextBox Name="Login" Height="20" Margin="60,10,10,154"/>
+        <TextBlock Text="Пароль:" Margin="10,35,0,82"/>
+        <TextBox Name="Password" Height="20" Margin="60,34,10,130"/>
+        <GroupBox Name="Roles"  Header="Роль" Margin="10,55,10,87" BorderThickness="2">
+            <StackPanel Orientation="Horizontal">
+                <RadioButton Content="Администратор" IsChecked="true" HorizontalAlignment="Left" Margin="10,0,0,0" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Преподаватель" HorizontalAlignment="Left" Margin="10,0,0,0" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Студент" HorizontalAlignment="Left" Margin="10,0,0,0" Checked="RadioButton_Checked"/>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Авторизоваться" HorizontalAlignment="Center" Margin="0,102,0,0" Width="95" Click="Button_Click" Height="28" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
