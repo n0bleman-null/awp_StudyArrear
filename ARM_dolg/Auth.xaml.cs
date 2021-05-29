@@ -26,7 +26,13 @@ namespace ARM_dolg
         Role Role = Role.Администратор;
         public AuthWindow()
         {
+            Loaded += AuthWindow_Loaded;
             InitializeComponent();
+        }
+
+        public void AuthWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -34,8 +40,8 @@ namespace ARM_dolg
             Window window = Role switch
             {
                 Role.Администратор => new AdminWindow(),
-                Role.Преподаватель => new AdminWindow(),
-                Role.Студент => new AdminWindow(),
+                Role.Преподаватель => new TeacherWindow(),
+                Role.Студент => new StudentWindow(),
                 _ => throw new NotImplementedException()
             };
             window.Show();
@@ -45,6 +51,14 @@ namespace ARM_dolg
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             Role = (Role)Enum.Parse(Role.GetType(), sender.GetType().GetProperty("Content").GetValue(sender).ToString());
+
+            if (Role is Role.Студент)
+                Group.IsEnabled = true;
+            else
+            {
+                Group.IsEnabled = false;
+                Group.Clear();
+            }
         }
     }
 }
