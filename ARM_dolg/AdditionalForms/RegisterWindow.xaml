@@ -8,7 +8,7 @@
         ResizeMode="CanResize"
         MinHeight="170"
         MinWidth="340"
-        Title="Регистрация" Height="201" Width="350">
+        Title="Регистрация" Height="200" Width="350">
     <Grid Height="184" VerticalAlignment="Top">
         <TextBlock Text="Логин:" Margin="10,10,0,87"/>
         <TextBox Name="Login" Height="20" Margin="60,10,10,154"/>
@@ -23,6 +23,6 @@
                 <RadioButton Content="Студент" HorizontalAlignment="Left" Margin="10,0,0,0" Checked="RadioButton_Checked"/>
             </StackPanel>
         </GroupBox>
-        <Button Content="Зарегестрировать" HorizontalAlignment="Center" Margin="0,130,0,0" Width="95" Click="Button_Click" Height="28" VerticalAlignment="Top"/>
+        <Button Content="Зарегестрировать" HorizontalAlignment="Center" Margin="0,130,0,0" Width="116" Click="Button_Click" Height="28" VerticalAlignment="Top"/>
     </Grid>
 </Window>

@@ -10,7 +10,7 @@ namespace ARM_dolg
         public long Id { get; set; }
         public long ПрактическияРабота { get; set; }
         public long Студент { get; set; }
-        public string Статус { get; set; }
+        public string Статус { get; set; } = "Незач";
 
         public virtual Lab ПрактическияРаботаNavigation { get; set; }
         public virtual Student СтудентNavigation { get; set; }

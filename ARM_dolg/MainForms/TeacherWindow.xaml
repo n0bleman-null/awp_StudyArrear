@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ARM_dolg"
         mc:Ignorable="d"
-        Title="Teacher" Height="450" Width="800">
-    <Grid>
-       
+        Title="Teacher" Height="320" Width="525">
+    <Grid HorizontalAlignment="Left">
+        <StackPanel>
+            <GroupBox Header="Добавить практическую работу">
+                <StackPanel Width="490">
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock HorizontalAlignment="Left" Text="Пара:" Height="20" Margin="3,0,0,0"/>
+                        <ComboBox x:Name="Para" Width="444" Margin="10,0,0,0" DropDownOpened="Para_DropDownOpened"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock HorizontalAlignment="Left" Text="Дата:" Height="20" Margin="3,0,0,0"/>
+                        <DatePicker x:Name="Data" Margin="13,0,0,0" Width="445"/>
+                    </StackPanel>
+                    <Button Content="Добавить" Width="100" Margin="0,10,0,0" Click="Button_Click_1"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Выставить незачеты" Height="152">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Text="Лаба:" Height="20" Margin="3,0,0,0" Width="45"/>
+                        <ComboBox x:Name="Lab" Width="430" Margin="10,0,0,0" DropDownOpened="Lab_DropDownOpened"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock HorizontalAlignment="Left" Text="Студент:" Height="20" Margin="3,0,0,0"/>
+                        <ComboBox x:Name="Stud" Width="430" Margin="10,0,0,0" DropDownOpened="Stud_DropDownOpened"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Статус: " Margin="3,10,10,10" Width="50"/>
+                        <RadioButton GroupName="Зачеты" Content="Зачет" Margin="12" Checked="RadioButton_Checked"/>
+                        <RadioButton GroupName="Зачеты" Content="Незачет" Margin="12" IsChecked="True" Checked="RadioButton_Checked"/>
+                        <RadioButton GroupName="Зачеты" Content="Отсутствует" Margin="12" Checked="RadioButton_Checked"/>
+                    </StackPanel>
+                    <Button Content="Поставить" Width="141" Click="Button_Click_2" />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
     </Grid>
 </Window>

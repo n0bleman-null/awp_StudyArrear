@@ -40,10 +40,43 @@ namespace ARM_dolg
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Teacher teacher = null;
+            using (var dc = new DolgContext())
+            {
+                switch (Role)
+                {
+                    case Role.Администратор:
+                        var admin = dc.Teachers.FirstOrDefault(s => s.Фио == Login.Text && s.Пароль == Password.Text && s.Администратор);
+                        if (admin is null)
+                        {
+                            MessageBox.Show("Ошибка доступа");
+                            return;
+                        }
+                        break;
+                    case Role.Преподаватель:
+                        teacher = dc.Teachers.FirstOrDefault(s => s.Фио == Login.Text && s.Пароль == Password.Text);
+                        if (teacher is null)
+                        {
+                            MessageBox.Show("Ошибка доступа");
+                            return;
+                        }
+                        break;
+                    case Role.Студент:
+                        var student = dc.Students.FirstOrDefault(s => s.Фио == Login.Text && s.Пароль == Password.Text && s.НомерГруппы == (Group.SelectedItem as StudGroup).Id);
+                        if (student is null)
+                        {
+                            MessageBox.Show("Ошибка доступа");
+                            return;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
             Window window = Role switch
             {
                 Role.Администратор => new AdminWindow(),
-                Role.Преподаватель => new TeacherWindow(),
+                Role.Преподаватель => new TeacherWindow(teacher),
                 Role.Студент => new StudentWindow(),
                 _ => throw new NotImplementedException()
             };
