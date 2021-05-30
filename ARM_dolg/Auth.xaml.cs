@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -26,13 +27,15 @@ namespace ARM_dolg
         Role Role = Role.Администратор;
         public AuthWindow()
         {
-            Loaded += AuthWindow_Loaded;
             InitializeComponent();
         }
 
-        public void AuthWindow_Loaded(object sender, RoutedEventArgs e)
+        private void Group_DropDownOpened(object sender, EventArgs e)
         {
-
+            using (var dc = new DolgContext())
+            {
+                Group.ItemsSource = dc.StudGroups.ToList();
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -54,11 +57,8 @@ namespace ARM_dolg
 
             if (Role is Role.Студент)
                 Group.IsEnabled = true;
-            else
-            {
-                Group.IsEnabled = false;
-                Group.Clear();
-            }
+            else            
+                Group.IsEnabled = false;            
         }
     }
 }

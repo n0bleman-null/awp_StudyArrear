@@ -1,0 +1,24 @@
+﻿<Window x:Class="ARM_dolg.AdditionalForms.AddStatusToLab"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ARM_dolg.AdditionalForms"
+        mc:Ignorable="d"
+        Title="Выставить статус работы" Height="180" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="19,10,0,0" Text="Практическая работа:" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="19,38,0,0" Text="Студент:" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="Lab" Margin="144,7,10,0" VerticalAlignment="Top" DropDownOpened="Lab_DropDownOpened"/>
+        <ComboBox Name="Student" Margin="144,35,10,0" VerticalAlignment="Top" DropDownOpened="Student_DropDownOpened"/>
+        <GroupBox Header="Статус" Margin="10,57,10,45">
+            <StackPanel Orientation="Horizontal" Height="29">
+                <RadioButton Content="Зачет" HorizontalAlignment="Left" Margin="131,0,0,0" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Незачет" HorizontalAlignment="Left" Margin="131,0,0,0" IsChecked="True" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Отсутствует" HorizontalAlignment="Left" Margin="131,0,0,0" Checked="RadioButton_Checked"/>
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Выставить" HorizontalAlignment="Center" Margin="0,105,0,0" VerticalAlignment="Top" Width="162" Height="29" RenderTransformOrigin="0.471,1.404" Click="Button_Click"/>
+
+    </Grid>
+</Window>

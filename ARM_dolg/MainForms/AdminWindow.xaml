@@ -1,0 +1,24 @@
+﻿<Window x:Class="ARM_dolg.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ARM_dolg"
+        mc:Ignorable="d"
+        Title="Окно администратора" Height="264" Width="344">
+    <Window.Resources>
+        <Style x:Key="StackButton">
+            <Setter Property="Control.Margin" Value="0,0,0,10" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Margin="10">
+            <Button Style="{StaticResource StackButton}" Content="Зарегестировать пользователя" Click="Button_Click"/>
+            <Button Style="{StaticResource StackButton}" Content="Добавить группу" Click="Button_Click_1"/>
+            <Button Style="{StaticResource StackButton}" Content="Добавить учебный предмет" Click="Button_Click_2"/>
+            <Button Style="{StaticResource StackButton}" Content="Назначить преподавателю группу" Click="Button_Click_3"/>
+            <Button Style="{StaticResource StackButton}" Content="Добавить практическую работу" Click="Button_Click_4"/>
+            <Button Style="{StaticResource StackButton}" Content="Добавить студенту статус работы" Click="Button_Click_5"/>
+        </StackPanel>
+    </Grid>
+</Window>
