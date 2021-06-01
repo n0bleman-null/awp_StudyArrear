@@ -41,12 +41,13 @@ namespace ARM_dolg
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Teacher teacher = null;
+            Student student = null;
             using (var dc = new DolgContext())
             {
                 switch (Role)
                 {
                     case Role.Администратор:
-                        var admin = dc.Teachers.FirstOrDefault(s => s.Фио == Login.Text && s.Пароль == Password.Text && s.Администратор);
+                        var admin = dc.Teachers.FirstOrDefault(s => s.Фио == Login.Text && s.Пароль == Password.Password && s.Администратор);
                         if (admin is null)
                         {
                             MessageBox.Show("Ошибка доступа");
@@ -54,7 +55,7 @@ namespace ARM_dolg
                         }
                         break;
                     case Role.Преподаватель:
-                        teacher = dc.Teachers.FirstOrDefault(s => s.Фио == Login.Text && s.Пароль == Password.Text);
+                        teacher = dc.Teachers.FirstOrDefault(s => s.Фио == Login.Text && s.Пароль == Password.Password);
                         if (teacher is null)
                         {
                             MessageBox.Show("Ошибка доступа");
@@ -62,7 +63,7 @@ namespace ARM_dolg
                         }
                         break;
                     case Role.Студент:
-                        var student = dc.Students.FirstOrDefault(s => s.Фио == Login.Text && s.Пароль == Password.Text && s.НомерГруппы == (Group.SelectedItem as StudGroup).Id);
+                        student = dc.Students.FirstOrDefault(s => s.Фио == Login.Text && s.Пароль == Password.Password && s.НомерГруппы == (Group.SelectedItem as StudGroup).Id);
                         if (student is null)
                         {
                             MessageBox.Show("Ошибка доступа");
@@ -77,7 +78,7 @@ namespace ARM_dolg
             {
                 Role.Администратор => new AdminWindow(),
                 Role.Преподаватель => new TeacherWindow(teacher),
-                Role.Студент => new StudentWindow(),
+                Role.Студент => new StudentWindow(student),
                 _ => throw new NotImplementedException()
             };
             window.Show();
@@ -86,6 +87,7 @@ namespace ARM_dolg
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
+            Group.SelectedItem = null;
             Role = (Role)Enum.Parse(Role.GetType(), sender.GetType().GetProperty("Content").GetValue(sender).ToString());
 
             if (Role is Role.Студент)

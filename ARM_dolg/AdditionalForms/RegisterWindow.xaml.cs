@@ -52,6 +52,7 @@ namespace ARM_dolg
                 }
 
             }
+            this.Close();
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)

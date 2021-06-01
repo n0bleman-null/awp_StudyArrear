@@ -10,10 +10,10 @@
         MinWidth="340"
         Title="Авторизация" Height="201" Width="350">
     <Grid Height="184" VerticalAlignment="Top">
-        <TextBlock Text="Логин:" Margin="10,10,0,87"/>
+        <TextBlock Text="Логин:" Margin="10,10,-10,-10"/>
         <TextBox Name="Login" Height="20" Margin="60,10,10,154"/>
         <TextBlock Text="Пароль:" Margin="10,34,0,83"/>
-        <TextBox Name="Password" Height="20" Margin="60,34,10,130"/>
+        <PasswordBox Name="Password" Height="20" Margin="60,34,10,130"/>
         <TextBlock Text="Группа:" Margin="10,59,0,73"/>
         <ComboBox Name="Group" Height="20" Margin="60,59,10,105" IsEnabled="False" DropDownOpened="Group_DropDownOpened"/>
         <GroupBox Name="Roles"  Header="Роль" Margin="10,83,10,59" BorderThickness="2">

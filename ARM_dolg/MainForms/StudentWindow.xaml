@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ARM_dolg"
         mc:Ignorable="d"
-        Title="Student" Height="450" Width="800">
+        Title="Student" Height="450" Width="700">
     <Grid>
-        
+        <DataGrid Name="Dolgi" AutoGenerateColumns="True" IsReadOnly="True" Margin="0,0,323,0"/>
+        <Button Content="Распечатать заявление на отработку" Margin="382,10,10,0" VerticalAlignment="Top" Height="58" Click="Button_Click"/>
+        <Button Content="Распечатать заявление на отчисление" Margin="382,84,10,0" VerticalAlignment="Top" Height="58" Click="Button_Click_1"/>
     </Grid>
 </Window>

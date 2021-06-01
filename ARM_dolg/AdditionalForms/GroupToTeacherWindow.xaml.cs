@@ -37,6 +37,8 @@ namespace ARM_dolg.AdditionalForms
                     MessageBox.Show("Проверьте корректность вводыимых значений (скорее всего значение в базе повторяется, попробуйте другое)", "Ошибка. Откат изменений!");
                 }
             }
+
+            this.Close();
         }
 
         private void Group_DropDownOpened(object sender, EventArgs e)

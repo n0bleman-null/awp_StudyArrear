@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ARM_dolg"
         mc:Ignorable="d"
-        Title="Teacher" Height="320" Width="525">
+        Title="Teacher" Height="606" Width="525">
     <Grid HorizontalAlignment="Left">
         <StackPanel>
             <GroupBox Header="Добавить практическую работу">
@@ -21,8 +21,14 @@
                     <Button Content="Добавить" Width="100" Margin="0,10,0,0" Click="Button_Click_1"/>
                 </StackPanel>
             </GroupBox>
-            <GroupBox Header="Выставить незачеты" Height="152">
+            <GroupBox Header="Выставить незачеты" Height="181">
                 <StackPanel>
+                    <StackPanel Orientation="Horizontal" Width="373" Margin="5">
+                        <TextBlock Text="Группа:"/>
+                        <ComboBox Name="Group" Width="100" Margin="5,0,0,0" Height="20" DropDownOpened="Group_DropDownOpened"/>
+                        <TextBlock Text="Предмет:" Margin="20,0,0,0"/>
+                        <ComboBox Name="Subj" Width="120" Margin="5,0,0,0" Height="20" DropDownOpened="Subj_DropDownOpened"/>
+                    </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Лаба:" Height="20" Margin="3,0,0,0" Width="45"/>
                         <ComboBox x:Name="Lab" Width="430" Margin="10,0,0,0" DropDownOpened="Lab_DropDownOpened"/>
@@ -40,6 +46,14 @@
                     <Button Content="Поставить" Width="141" Click="Button_Click_2" />
                 </StackPanel>
             </GroupBox>
+            <TextBlock Text="Статистика долгов" HorizontalAlignment="Center" Margin="5" FontSize="14"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Группа:"  Margin="10,5,0,0"/>
+                <ComboBox Name="DolgiGroup" Margin="10,3,10,0" Width="100" DropDownOpened="DolgiGroup_DropDownOpened" SelectionChanged="DolgiGroup_SelectionChanged"/>
+                <TextBlock Text="Предмет:"  Margin="20,5,0,0"/>
+                <ComboBox Name="DolgiSubject" Margin="10,3,10,0" Width="120" DropDownOpened="DolgiSubject_DropDownOpened" SelectionChanged="DolgiGroup_SelectionChanged"/>
+            </StackPanel>
+            <DataGrid Name="Dolgi"  Height="206" Margin="10" IsReadOnly="True"/>
         </StackPanel>
     </Grid>
 </Window>
