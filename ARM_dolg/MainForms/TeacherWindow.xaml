@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ARM_dolg"
         mc:Ignorable="d"
-        Title="Teacher" Height="606" Width="525">
+        Title="Teacher" Height="606" Width="525"
+        Icon="D:\ARM_dolg\ARM_dolg\icon.ico">
     <Grid HorizontalAlignment="Left">
         <StackPanel>
             <GroupBox Header="Добавить практическую работу">

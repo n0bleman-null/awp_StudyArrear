@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ARM_dolg"
         mc:Ignorable="d"
-        Title="Окно администратора" Height="264" Width="344">
+        Title="Окно администратора" Height="264" Width="344"
+        Icon="D:\ARM_dolg\ARM_dolg\icon.ico">
     <Window.Resources>
         <Style x:Key="StackButton">
             <Setter Property="Control.Margin" Value="0,0,0,10" />

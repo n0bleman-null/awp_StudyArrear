@@ -8,7 +8,8 @@
         ResizeMode="CanResize"
         MinHeight="170"
         MinWidth="340"
-        Title="Авторизация" Height="201" Width="350">
+        Title="Авторизация" Height="201" Width="350"
+        Icon="D:\ARM_dolg\ARM_dolg\icon.ico">
     <Grid Height="184" VerticalAlignment="Top">
         <TextBlock Text="Логин:" Margin="10,10,-10,-10"/>
         <TextBox Name="Login" Height="20" Margin="60,10,10,154"/>

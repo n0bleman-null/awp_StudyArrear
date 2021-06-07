@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:ARM_dolg"
              StartupUri="Auth.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Window">
+            <Setter Property="Icon" Value="D:\ARM_dolg\ARM_dolg\icon.ico"/>
+        </Style>
     </Application.Resources>
 </Application>
